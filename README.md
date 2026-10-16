@@ -76,7 +76,7 @@ Run these commands from the repository root.
 **1. Clone and create a Python environment** (PowerShell):
 
 ```powershell
-git clone <repository-url> lmms-agent-bridge
+git clone https://github.com/Jx9x/lmms-mcp-bridge.git lmms-agent-bridge
 cd lmms-agent-bridge
 py -3 -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install -r requirements.txt
