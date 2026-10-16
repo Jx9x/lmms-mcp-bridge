@@ -1,6 +1,6 @@
 # LMMS Agent Bridge
 
-Give your AI agent access to [LMMS](https://lmms.io) so it can compose,
+This gives your AI agent access to [LMMS](https://lmms.io) so it can compose,
 arrange, mix, and export music, either working alone or alongside you in the
 same project.
 
