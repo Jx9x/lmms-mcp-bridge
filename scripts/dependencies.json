@@ -1,0 +1,47 @@
+{
+  "dependencies": [
+    {
+      "name": "mingw64",
+      "version": "4.9.4-posix-seh-rt_v5-rev0",
+      "url": "https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/4.9.4/threads-posix/seh/x86_64-4.9.4-release-posix-seh-rt_v5-rev0.7z/download",
+      "archive": "x86_64-4.9.4-release-posix-seh-rt_v5-rev0.7z",
+      "sha256": "84d1a45a00653f8ae4f6216778603230b020e56073be27c05e9b0b4a1497f8a5",
+      "archive_root": "mingw64",
+      "destination": "tools/mingw64",
+      "required_files": ["bin/g++.exe", "bin/mingw32-make.exe", "bin/dlltool.exe"],
+      "version_command": ["bin/g++.exe", "-dumpversion"],
+      "expected_version": "4.9.4"
+    },
+    {
+      "name": "lmms",
+      "version": "1.2.2",
+      "commit": "94363be152f526edba4e884264d891f1361cf54b",
+      "url": "https://codeload.github.com/LMMS/lmms/tar.gz/94363be152f526edba4e884264d891f1361cf54b",
+      "archive": "lmms-94363be152f526edba4e884264d891f1361cf54b.tar.gz",
+      "sha256": "79c89535e56c452ee25248a34646665ef30a522cf15303e1cbdfc0e869e34d9f",
+      "archive_root": "lmms-94363be152f526edba4e884264d891f1361cf54b",
+      "destination": "third_party/lmms-1.2.2",
+      "required_files": ["include/Engine.h", "src/core/audio/AudioDevice.cpp", "LICENSE.txt"]
+    },
+    {
+      "name": "qtbase",
+      "version": "5.4.2",
+      "url": "https://download.qt.io/archive/qt/5.4/5.4.2/submodules/qtbase-opensource-src-5.4.2.7z",
+      "archive": "qtbase-opensource-src-5.4.2.7z",
+      "sha256": "6071f4b960685670c5985658285833b4e48ffb90fc93bd68b9a4381ca625bf8c",
+      "archive_root": "qtbase-opensource-src-5.4.2",
+      "destination": "third_party/qtbase-opensource-src-5.4.2",
+      "required_files": ["include/QtCore/qglobal.h", "src/corelib/global/qglobal.h", "LICENSE.LGPLv21"]
+    },
+    {
+      "name": "libsamplerate",
+      "version": "0.1.8",
+      "url": "https://distfiles.macports.org/libsamplerate/libsamplerate-0.1.8.tar.gz",
+      "archive": "libsamplerate-0.1.8.tar.gz",
+      "sha256": "93b54bdf46d5e6d2354b7034395fe329c222a966790de34520702bb9642f1c06",
+      "archive_root": "libsamplerate-0.1.8",
+      "destination": "third_party/libsamplerate-0.1.8",
+      "required_files": ["src/samplerate.h", "COPYING"]
+    }
+  ]
+}
