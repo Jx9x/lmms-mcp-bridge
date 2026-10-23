@@ -16,11 +16,10 @@ arguments and available controls.
    Save unsaved work with `save_project` before new/load. Use
    `discard_unsaved:true` only when discarding those edits is intended.
 2. Unless the user requests another level, use
-   `update_project` with `master_volume:8` after connecting and after every
+   `update_project` with `master_volume:40` after connecting and after every
    `create_project` or `load_project`. Confirm the level before
-   `transport` with `action:"play"`. This conservative default protects against
-   unexpected playback levels; a saved volume does not establish the user's
-   intended listening level.
+   `transport` with `action:"play"`. This default limits unexpected playback
+   levels; a saved volume does not establish the intended listening level.
 3. Use an existing bridge-enabled session when available. The MCP server does
    not start or close LMMS. If launch is needed, first verify that no LMMS
    process is running, locate the installed bridge project, then run this from
@@ -83,7 +82,7 @@ pipe fallback are documented in [connection guidance](references/connection.md).
   different existing destination requires `overwrite:true`; saving clears the
   native dirty marker.
 
-The runtime `update_project.playback_volume_cap` defaults to 8 percent and
+The runtime `update_project.playback_volume_cap` defaults to 40 percent and
 can be configured when the user requests another level. New/load/play lowers
 master volume when needed. Changing the cap alone does not dirty the song or
 persist in the project; lowering the actual master volume changes song data.

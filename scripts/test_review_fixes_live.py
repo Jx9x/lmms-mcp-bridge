@@ -10,7 +10,7 @@ async def run_suite(call, artifacts):
     original = call("song")["file"]
     assert not call("song")["modified"]
     call("create_project", {"empty": True, "bpm": 120})
-    assert call("song")["masterVolume"] == 8
+    assert call("song")["masterVolume"] == 40
     checkpoint = str(artifacts / "review-fixes.mmp")
     checks, report = [], []
 
@@ -159,7 +159,7 @@ async def run_suite(call, artifacts):
     check("notes" not in inspect["pattern"] and inspect["pattern"]["note_count"] == 3, "pattern metadata without notes is supported")
     clean()
     token = call("song")["project_token"]
-    for name, args in [("update_track", {"track_handle": handle, "volume": 25}), ("update_project", {"master_volume": 8}),
+    for name, args in [("update_track", {"track_handle": handle, "volume": 25}), ("update_project", {"master_volume": 40}),
                        ("set_notes_batch", {"clip_handle": clip_handle, "edits": [{"note_index": 0, "pos": 0}]})]:
         unchanged(name, args)
     clean()

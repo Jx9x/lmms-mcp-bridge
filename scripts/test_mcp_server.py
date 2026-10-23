@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import Mock
 
 from bridge_client import BridgeError
-from lmms_mcp import BridgeGateway
+from lmms_mcp import BridgeGateway, create_server
 
 
 def tool(name, properties=None, required=(), read_only=False, destructive=False):
@@ -72,6 +72,13 @@ CATALOG = [
 def native_note(index=0, volume=100):
     return {"index": index, "key": 48, "midi_key": 60, "lmms_key": 48, "note_name": "C4", "pos": index * 48,
             "length": 48, "len": 48, "volume": volume, "vol": volume, "panning": 0, "pan": 0}
+
+
+class ServerTests(unittest.TestCase):
+    def test_initialization_describes_default_playback_cap(self):
+        server = create_server(BridgeGateway(request=Mock()))
+        instructions = server.create_initialization_options().instructions
+        self.assertIn("Playback volume is capped at 40 percent by default", instructions)
 
 
 class GatewayTests(unittest.IsolatedAsyncioTestCase):

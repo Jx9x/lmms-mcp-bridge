@@ -48,7 +48,8 @@ replacing a DLL loaded in the user's usual session. The runner:
 2. Closes the eligible clean normal session with `CloseMainWindow()` and
    refuses startup if `Documents/lmms/recover.mmp` remains.
 3. Launches a visible bridge-enabled instance through
-   `start-lmms-with-bridge.ps1`, using a disposable fixture copy at safe gain.
+   `start-lmms-with-bridge.ps1`, using a disposable fixture copy at 8% master
+   volume for automated playback.
 4. Runs the protocol, composition, render, close-prompt, and MCP suites.
 5. Saves dirty test edits to a protected output before closing normally.
    If saving/shutdown fails, leaves LMMS and backups intact rather than
@@ -75,7 +76,7 @@ Use this only when the protected suite does not cover the investigation.
    recovery data to make startup proceed.
 2. Launch with `start-lmms-with-bridge.ps1 -Project <absolute-demo-copy>`
    and a visible window. Poll `bridge.ps1 ping` for readiness, then inspect
-   the song and set master volume to 8 unless the user requested another
+   the song and set master volume to 40 unless the user requested another
    level. Reapply after every new/load and confirm before playback.
 3. Run native `selftest`, `song`, and `tracks`; exercise tempo, play/stop,
    `show`, and rejected commands such as `bogus`, `tempo abc`, and `tempo 5`.

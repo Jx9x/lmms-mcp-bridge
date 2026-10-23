@@ -28,7 +28,7 @@ before the corresponding work.
 - Protect unsaved songs. Never kill LMMS or discard edits to make a task
   proceed. Close only through `CloseMainWindow()` after saving and confirming
   that the window title has no `*`.
-- Default to a conservative 8 percent master volume unless the user
+- Default to 40 percent master volume unless the user
   specifies another level; the operation skill gives
   the checks required after connecting/new/load and before playback.
 - Use the native bridge for supported live edits. After a timeout or pipe

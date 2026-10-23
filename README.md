@@ -52,7 +52,9 @@ AI agent  ──MCP (stdio)──▶  scripts/lmms_mcp.py  ──named pipe─�
 > The tools edit the song that is **currently open in LMMS, including unsaved
 > changes**. Save your work before handing a song to an agent. The skill
 > instructs agents to save before replacing a song and never to discard work
-> unless asked. Playback defaults to a conservative **8% master volume**.
+> unless asked. Playback is capped at **40% master volume** by default. Ask your
+> agent to adjust `playback_volume_cap` for a different limit. Actual loudness
+> also depends on your system volume and speakers.
 
 ## Requirements
 

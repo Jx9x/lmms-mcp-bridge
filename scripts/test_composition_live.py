@@ -38,6 +38,7 @@ def run_suite(call, artifacts, process_id):
     assert set(help_response["commands"]) == set(tools)
     info = call("get_lmms_info")
     assert all(info["audio_export_formats"].values()) and info["midi_export_available"], info
+    assert info["playback_volume_cap"] == 40, info
     (artifacts / "native-tools.json").write_text(json.dumps(help_response["tools"], indent=2), encoding="utf-8")
     assert call("note_name_to_key", {"name": "C4"})["key"] == 60
     assert call("note_name_to_key", {"name": "Bb2"})["key"] == 46
@@ -46,6 +47,7 @@ def run_suite(call, artifacts, process_id):
     assert call("generate_scale", {"root": "C", "scale_type": "major"})["keys"] == [60, 62, 64, 65, 67, 69, 71, 72]
     edit("create_project", {"empty": True, "bpm": 120})
     assert call("song")["trackCount"] == 0
+    assert call("song")["masterVolume"] == 40
     reject("export_midi", {"path": str(artifacts / "empty.mid")})
     assert not (artifacts / "empty.mid").exists()
     reject("create_project", {"bpm": 120.5})

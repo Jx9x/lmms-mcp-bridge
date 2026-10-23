@@ -252,7 +252,7 @@ void putPoints( AutomationPattern * pattern, const QJsonArray & points, const QJ
 
 }
 
-CompositionCommands::CompositionCommands() : QObject(), m_renderer( new BridgeRenderer( this ) ), m_playbackVolumeCap( 8 )
+CompositionCommands::CompositionCommands() : QObject(), m_renderer( new BridgeRenderer( this ) ), m_playbackVolumeCap( 40 )
 {
 	QObject::connect( Engine::getSong(), &Song::projectLoaded, this, []() { BridgeModel::resetProjectHandles(); BridgeModel::prepareMixerSolo(); } );
 }

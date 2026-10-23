@@ -236,7 +236,7 @@ def create_server(gateway):
             "list_samples returns absolute loader paths. Preset/sample loading preserves names, mix and sample length by default. "
             "Sample clip names last only for the current session in stock LMMS 1.2.2; inspect warnings and capabilities. "
             "changed reports data changes in this call; modified is the current native song dirty state. No-op setters leave it unchanged. "
-            "Playback volume is capped at 8 percent by default; update_project can configure playback_volume_cap. "
+            "Playback volume is capped at 40 percent by default; update_project can configure playback_volume_cap. "
             "After a transport error, inspect the project before retrying an edit; edits are never retried automatically. "
             "render_project is asynchronous: poll render_status with job_id and require job.state=succeeded, or set wait_seconds up to 30. "
             "Project edits and playback are blocked during rendering; cancel_render preserves the output destination."
